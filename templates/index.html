@@ -1,81 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gym</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Image Gallery</title>
 </head>
-<body>
-  <div class="container">
-    <h1>Gym</h1>
-    <div class="forms">
-      <div class="login-form">
-        <h2>Login</h2>
-        <form action="#">
-          <label for="email">Email:</label>
-          <input type="email" id="email" name="email" placeholder="Enter email" required>
-          <label for="password">Password:</label>
-          <input type="password" id="password" name="password" placeholder="Enter password" required>
-          <button type="submit">Login</button>
-        </form>
-      </div>
-
-      <div class="signup-form">
-        <h2>Signup</h2>
-        <form action="#">
-          <label for="name">Name:</label>
-          <input type="text" id="name" name="name" placeholder="Enter name" required>
-          <label for="email">Email:</label>
-          <input type="email" id="email" name="email" placeholder="Enter email" required>
-          <label for="password">Password:</label>
-          <input type="password" id="password" name="password" placeholder="Enter password" required>
-          <button type="submit">Signup</button>
-        </form>
-      </div>
-    </div>
-  </div>
-
-  <div class="container introduction-workout-types">
-    <div class="introduction">
-      <img src="gym-introduction.jpg" alt="Gym Introduction">
-      <p>Welcome to the gym! We are committed to helping you achieve your fitness goals. We offer a variety of workout types to suit all fitness levels. Whether you are a beginner or an experienced athlete, we have something for you.</p>
+<body style="background-color: black;">
+    <div class="gallery" id="imageGallery">
+        <img src="Images/biceps-exercises-dumbbell-home.jpeg" alt="" data-href="first.html">
+        <img src="Images/download.jpg" alt="" data-href="first.html">
+        <img src="Images/images (1).jpg" alt="" data-href="first.html">
+        <img src="Images/images.jpg" alt="" data-href="first.html">
     </div>
 
-    <div class="workout-types">
-      <h2>Select your workout type:</h2>
-      <select>
-        <option value="cardio">Cardio</option>
-        <option value="strength-training">Strength Training</option>
-        <option value="yoga">Yoga</option>
-        <option value="pilates">Pilates</option>
-        <option value="dance">Dance</option>
-      </select>
-      <p>Once you have selected your workout type, you will be taken to a page with more information about that type of workout.</p>
-    </div>
-  </div>
-
-  <div class="container camera-access">
-    <h2>Gym Camera Access</h2>
-    <p>To use our virtual trainer feature, please allow access to your camera.</p>
-    <button id="cameraAccessButton">Allow Camera Access</button>
-    <video id="cameraStream"></video>
-
-    <script>
-      const cameraAccessButton = document.getElementById('cameraAccessButton');
-      const cameraStream = document.getElementById('cameraStream');
-
-      cameraAccessButton.addEventListener('click', () => {
-        navigator.mediaDevices.getUserMedia({ video: true })
-          .then((stream) => {
-            cameraStream.srcObject = stream;
-            cameraAccessButton.textContent = 'Camera Access Granted';
-          })
-          .catch((error) => {
-            console.error('Failed to access camera:', error);
-          });
-      });
-    </script>
-  </div>
+    <script src="script.js"></script>
 </body>
 </html>
+
