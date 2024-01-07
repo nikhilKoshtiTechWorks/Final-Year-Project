@@ -1,47 +1,58 @@
 document.addEventListener('DOMContentLoaded', function () {
     const gallery = document.getElementById('imageGallery');
-    const images = gallery.querySelectorAll('img');
-    let lastHoveredIndex = 0; // Track the index of the last hovered image
+    const titleNames = gallery.querySelectorAll('.title-name');
+    let lastHoveredIndex = 0;
 
-    images.forEach((image, index) => {
-        image.addEventListener('mouseover', function () {
-            // Remove 'active' class from all images
-            images.forEach(img => img.classList.remove('active'));
+    function showFullImage(index) {
+        titleNames.forEach(title => title.classList.remove('active'));
 
-            // Add 'active' class to the hovered image
-            this.classList.add('active');
+        setTimeout(() => {
+            titleNames[index].classList.add('active');
+        }, 10);
 
-            // Set the width of the previous image to 10%
-            if (index > 0) {
-                images[index - 1].style.width = '10%';
-            }
+        if (index > 0) {
+            titleNames[index - 1].style.width = '10%';
+            titleNames[index - 1].querySelector('img').style.width = '100%';
+        }
 
-            // Set the width of the last hovered image to 10%
-            images[lastHoveredIndex].style.width = '10%';
+        titleNames[lastHoveredIndex].style.width = '10%';
+        titleNames[lastHoveredIndex].querySelector('img').style.width = '100%';
 
-            // Set the width of the first image to 10% when hovering over the last image
-            if (index === images.length - 1) {
-                images[0].style.width = '10%';
-                this.style.width = '100%'; // Set the width of the last hovered image to 100%
-            } else {
-                this.style.width = '100%'; // Set the width of the hovered image to 100%
-            }
+        if (index === titleNames.length - 1) {
+            titleNames[0].style.width = '10%';
+            titleNames[0].querySelector('img').style.width = '100%';
+            titleNames[index].style.width = '100%';
+            titleNames[index].querySelector('img').style.width = '100%';
+        } else {
+            titleNames[index].style.width = '100%';
+            titleNames[index].querySelector('img').style.width = '100%';
+        }
 
-            lastHoveredIndex = index; // Update the last hovered index
+        lastHoveredIndex = index;
+    }
+
+    titleNames.forEach((titleName, index) => {
+        const img = titleName.querySelector('img');
+        const titleText = titleName.querySelector('.image-text');
+
+        titleName.addEventListener('mouseover', function () {
+            showFullImage(index);
         });
 
-        // Add click event for redirection
-        image.addEventListener('click', function () {
-            window.location.href = this.getAttribute('data-href');
+        titleName.addEventListener('click', function () {
+            window.location.href = img.getAttribute('data-href');
         });
     });
 
-    // Set the width of the first image to 100% initially
-    images[0].classList.add('active');
+    // Show the full image on initial page load
+    showFullImage(0);
 
-    // Reset the width of all images to 10% when mouse leaves the gallery
     gallery.addEventListener('mouseleave', function () {
-        images.forEach(img => img.style.width = '');
-        images[lastHoveredIndex].style.width = '100%'; // Retain 100% width for the last hovered image
+        titleNames.forEach(title => {
+            title.style.width = '';
+            title.querySelector('img').style.width = '';
+        });
+        titleNames[lastHoveredIndex].style.width = '100%';
+        titleNames[lastHoveredIndex].querySelector('img').style.width = '100%';
     });
 });
