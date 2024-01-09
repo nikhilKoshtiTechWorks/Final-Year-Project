@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- url_for() will construct the url for our desired .css file it is done by jinja -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"> 
+    <title>Image Gallery</title>
+</head>
+<body style="background-color: black;">
+    
+    <!-- Selection Panel -->
+    <div class="gallery" id="imageGallery">
+        <div class="title-name">
+            <img src="{{ url_for('static', filename='img/biceps-exercises-dumbbell-home.jpeg') }}" alt="" data-href="video_feed">
+            <p class="image-text">Biceps Exercise</p>
+        </div>
+        <div class="title-name">
+            <img src="{{ url_for('static', filename='img/download.jpg') }}" alt="" data-href="first.html">
+            <p class="image-text">Biceps Exercise</p>
+        </div>
+        <div class="title-name">
+            <img src="{{ url_for('static', filename='img/images (1).jpg') }}" alt="" data-href="first.html">
+            <p class="image-text">Biceps Exercise</p>
+        </div>
+        <div class="title-name">
+            <img src="{{ url_for('static', filename='img/images.jpg') }}" alt="" data-href="first.html">
+            <p class="image-text">Biceps Exercise</p>
+        </div>
+    </div>
+
+    <!-- <div class="trial">
+        <h1>Hello</h1>
+    </div> -->
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
+
