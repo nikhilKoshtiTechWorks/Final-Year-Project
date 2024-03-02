@@ -1,20 +1,12 @@
 from app import app
-from flask import Response
-from camera import VideoCamera      # mporting VideoCamera class from camera package
+from flask import Response, render_template
+# from camera import VideoCamera      # mporting VideoCamera class from camera package
 import cv2
 import mediapipe as mp
 import numpy as np
 mp_drawing = mp.solutions.drawing_utils    
 mp_pose = mp.solutions.pose
 
-
-def gen(camera):                    # creating function to get the frame in data variable using get_frame() from camera package
-    while True:
-        data = camera.get_frame()
-
-        frame=data[0]
-        yield (b'--frame\r\n'
-               b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n\r\n')
         
 def calculate_angle(a,b,c):
     a = np.array(a)   # first i.e. shoulder
@@ -120,12 +112,21 @@ def processed_gen():
                 b'Content-Type: image/jpeg\r\n\r\n' + frames + b'\r\n\r\n')
 
             
-def mediapipe_videofeed():
-    print("vosk")
 
+@app.route('/')
+def index():
+    return render_template("index.html")
+    
 @app.route('/video_feed')
 def video_feed():
+    return render_template('biceps.html')
+
+# Route to stream video frames
+@app.route('/stream_video')
+def stream_video():
     return Response(processed_gen(), mimetype='multipart/x-mixed-replace; boundary=frame')
+
+    
 
 
 if __name__ == "__main__":
