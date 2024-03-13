@@ -3,74 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- url_for() will construct the url for our desired .css file it is done by jinja -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"> 
-    <title>Image Gallery</title>
-    <style>
-        @media only screen and (max-width: 455px) {
-            .gallery {
-                flex-direction: column;
-            }
-
-            .title-name {
-                flex-direction: column;
-            }
-
-            .title-name img {
-                width: 100%;
-                /*height: 100%; */
-                object-fit: cover;
-                border-radius: 10px;
-                border: 2px solid white;
-            }
-
-            .title-name p {
-                text-shadow: 2px 2px 5px black;
-                /* position: absolute; */
-                padding-bottom: 5%;
-                top: 50%;
-                left: 50%;
-                /* transform: translate(-50%, -50%); */
-                color: white;
-                font-family: "Copperplate", fantasy;
-                opacity: 0;
-                /* transition: opacity 1s ease, transform 0.5s ease; Add transition for opacity and transform properties */
-                font-size: 1em;
-                }
-        }
-    </style>
-
-    <script>
-        
-    </script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
+    <title>Document</title>
+    <script src="{{ url_for('static', filename='js/script.js')}}"></script>
 </head>
-<body style="background-color: black;">
+<body>
     
-    <!-- Selection Panel -->
-    <div class="gallery" id="imageGallery">
-        <div class="title-name">
-            <img src="{{ url_for('static', filename='img/biceps-exercises-dumbbell-home.jpeg') }}" alt="" data-href="video_feed">
-            <p class="image-text">Biceps Exercise</p>
-        </div>
-        <div class="title-name">
-            <img src="{{ url_for('static', filename='img/download.jpg') }}" alt="" data-href="video_feed2">
-            <p class="image-text">Biceps Exercise</p>
-        </div>
-        <div class="title-name">
-            <img src="{{ url_for('static', filename='img/images (1).jpg') }}" alt="" data-href="first.html">
-            <p class="image-text">Biceps Exercise</p>
-        </div>
-        <div class="title-name">
-            <img src="{{ url_for('static', filename='img/images.jpg') }}" alt="" data-href="first.html">
-            <p class="image-text">Biceps Exercise</p>
-        </div>
-    </div>
+    <h1>FORM PERFECTOR</h1>
+    <nav>
+        <ul>
+            <a href="#"><li>HOME</li></a>
+            <a href="#"><li>ORDER</li></a>
+            <a href="#"><li>NEAR</li></a>
+            <a href="#"><li>ABOUT</li></a>
+        </ul>
+    </nav>
 
-    <!-- <div class="trial">
-        <h1>Hello</h1>
-    </div> -->
+    <section class="exercises">
 
-    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+        <div class="exercise">
+            <img src="{{ url_for('static', filename='img/biceps-exercises-dumbbell-home.jpeg') }}" alt="Photo 1">
+            <div class="content">
+                <h2>Bicesps</h2><br>
+                <li>skdjf</li>
+                <li>sbvskd</li>
+                <p>Tighten your bicep and hold that tension as you raise the dumbbell up to your shoulder, bending at the elbow. Exhale as you curl, pause, then inhale as you straighten back to the starting position. Keep your elbow on your thigh at all times. Perform 3 sets of 12 reps, resting for 60 seconds between each set.</p><br>
+                <button>Lets Try</button>
+            </div>
+            <h4>Biceps</h4>
+        </div>
+
+        <div class="exercise">
+            <img src="{{ url_for('static', filename='img/download.jpg') }}" alt="Photo 2">
+            <div class="content">
+                <h2>Bicesps</h2><br>
+                <li>skdjf</li>
+                <li>sbvskd</li>
+                <p>Tighten your bicep and hold that tension as you raise the dumbbell up to your shoulder, bending at the elbow. Exhale as you curl, pause, then inhale as you straighten back to the starting position. Keep your elbow on your thigh at all times. Perform 3 sets of 12 reps, resting for 60 seconds between each set.</p><br>
+                <button>Lets Try</button>
+            </div>
+            <h4>Triceps</h4>
+        </div>
+
+        <div class="exercise">
+            <img src="{{ url_for('static', filename='img/images (1).jpg') }}" alt="Photo 3">
+            <div class="content">
+                <h2>Bicesps</h2><br>
+                <li>skdjf</li>
+                <li>sbvskd</li>
+                <p>Tighten your bicep and hold that tension as you raise the dumbbell up to your shoulder, bending at the elbow. Exhale as you curl, pause, then inhale as you straighten back to the starting position. Keep your elbow on your thigh at all times. Perform 3 sets of 12 reps, resting for 60 seconds between each set.</p><br>
+                <button>Lets Try</button>
+            </div>
+            <h4>Pull-ups</h4>
+        </div>
+
+        <div class="exercise">
+            <img src="{{ url_for('static', filename='img/images.jpg') }}" alt="Photo 4">
+            <div class="content">
+                <h2>Bicesps</h2><br>
+                <li>skdjf</li>
+                <li>sbvskd</li>
+                <p>Tighten your bicep and hold that tension as you raise the dumbbell up to your shoulder, bending at the elbow. Exhale as you curl, pause, then inhale as you straighten back to the starting position. Keep your elbow on your thigh at all times. Perform 3 sets of 12 reps, resting for 60 seconds between each set.</p><br>
+                <button>Lets Try</button>
+            </div>
+            <h4>Legs</h4>
+        </div>
+    </section>
+
 </body>
 </html>
-
