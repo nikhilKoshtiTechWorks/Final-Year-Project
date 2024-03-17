@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
-    <title>Document</title>
+    <title>Form Perfectort</title>
     <script src="{{ url_for('static', filename='js/script.js')}}"></script>
 </head>
 <body>
@@ -18,57 +18,117 @@
             <a href="#"><li>ABOUT</li></a>
         </ul>
     </nav>
-
-    <section class="exercises">
-
-        <div class="exercise">
-            <img src="{{ url_for('static', filename='img/biceps-exercises-dumbbell-home.jpeg') }}" alt="Photo 1">
-            <div class="content">
-                <h2>Bicesps</h2><br>
-                <li>skdjf</li>
-                <li>sbvskd</li>
-                <p>Tighten your bicep and hold that tension as you raise the dumbbell up to your shoulder, bending at the elbow. Exhale as you curl, pause, then inhale as you straighten back to the starting position. Keep your elbow on your thigh at all times. Perform 3 sets of 12 reps, resting for 60 seconds between each set.</p><br>
-                <button>Lets Try</button>
+    <br>
+    <div class="selection-panel">
+        <h2 class="section-title">Exersizes we offer</h2>
+    
+        <section class="exercises">
+    
+            <div class="exercise">
+                <img src="{{ url_for('static', filename='img/biceps-exercises-dumbbell-home.jpeg') }}" alt="Photo 1">
+                <div class="content">
+                    <h2>Bicesps</h2><br>
+                    <li>skdjf</li>
+                    <li>sbvskd</li>
+                    <p>Tighten your bicep and hold that tension as you raise the dumbbell up to your shoulder, bending at the elbow. Exhale as you curl, pause, then inhale as you straighten back to the starting position. Keep your elbow on your thigh at all times. Perform 3 sets of 12 reps, resting for 60 seconds between each set.</p><br>
+                    <button onclick="redirectToPage()">Lets Try</button>
+                </div>
+                <h4>Biceps</h4>
             </div>
-            <h4>Biceps</h4>
-        </div>
-
-        <div class="exercise">
-            <img src="{{ url_for('static', filename='img/download.jpg') }}" alt="Photo 2">
-            <div class="content">
-                <h2>Bicesps</h2><br>
-                <li>skdjf</li>
-                <li>sbvskd</li>
-                <p>Tighten your bicep and hold that tension as you raise the dumbbell up to your shoulder, bending at the elbow. Exhale as you curl, pause, then inhale as you straighten back to the starting position. Keep your elbow on your thigh at all times. Perform 3 sets of 12 reps, resting for 60 seconds between each set.</p><br>
-                <button>Lets Try</button>
+    
+            <div class="exercise">
+                <img src="{{ url_for('static', filename='img/download.jpg') }}" alt="Photo 2">
+                <div class="content">
+                    <h2>Bicesps</h2><br>
+                    <li>skdjf</li>
+                    <li>sbvskd</li>
+                    <p>Tighten your bicep and hold that tension as you raise the dumbbell up to your shoulder, bending at the elbow. Exhale as you curl, pause, then inhale as you straighten back to the starting position. Keep your elbow on your thigh at all times. Perform 3 sets of 12 reps, resting for 60 seconds between each set.</p><br>
+                    <button>Lets Try</button>
+                </div>
+                <h4>Triceps</h4>
             </div>
-            <h4>Triceps</h4>
-        </div>
-
-        <div class="exercise">
-            <img src="{{ url_for('static', filename='img/images (1).jpg') }}" alt="Photo 3">
-            <div class="content">
-                <h2>Bicesps</h2><br>
-                <li>skdjf</li>
-                <li>sbvskd</li>
-                <p>Tighten your bicep and hold that tension as you raise the dumbbell up to your shoulder, bending at the elbow. Exhale as you curl, pause, then inhale as you straighten back to the starting position. Keep your elbow on your thigh at all times. Perform 3 sets of 12 reps, resting for 60 seconds between each set.</p><br>
-                <button>Lets Try</button>
+    
+            <div class="exercise">
+                <img src="{{ url_for('static', filename='img/images (1).jpg') }}" alt="Photo 3">
+                <div class="content">
+                    <h2>Bicesps</h2><br>
+                    <li>skdjf</li>
+                    <li>sbvskd</li>
+                    <p>Tighten your bicep and hold that tension as you raise the dumbbell up to your shoulder, bending at the elbow. Exhale as you curl, pause, then inhale as you straighten back to the starting position. Keep your elbow on your thigh at all times. Perform 3 sets of 12 reps, resting for 60 seconds between each set.</p><br>
+                    <button>Lets Try</button>
+                </div>
+                <h4>Pull-ups</h4>
             </div>
-            <h4>Pull-ups</h4>
-        </div>
-
-        <div class="exercise">
-            <img src="{{ url_for('static', filename='img/images.jpg') }}" alt="Photo 4">
-            <div class="content">
-                <h2>Bicesps</h2><br>
-                <li>skdjf</li>
-                <li>sbvskd</li>
-                <p>Tighten your bicep and hold that tension as you raise the dumbbell up to your shoulder, bending at the elbow. Exhale as you curl, pause, then inhale as you straighten back to the starting position. Keep your elbow on your thigh at all times. Perform 3 sets of 12 reps, resting for 60 seconds between each set.</p><br>
-                <button>Lets Try</button>
+    
+            <div class="exercise">
+                <img src="{{ url_for('static', filename='img/images.jpg') }}" alt="Photo 4">
+                <div class="content">
+                    <h2>Bicesps</h2><br>
+                    <li>skdjf</li>
+                    <li>sbvskd</li>
+                    <p>Tighten your bicep and hold that tension as you raise the dumbbell up to your shoulder, bending at the elbow. Exhale as you curl, pause, then inhale as you straighten back to the starting position. Keep your elbow on your thigh at all times. Perform 3 sets of 12 reps, resting for 60 seconds between each set.</p><br>
+                    <button>Lets Try</button>
+                </div>
+                <h4>Legs</h4>
             </div>
-            <h4>Legs</h4>
-        </div>
-    </section>
+        </section>
+    </div>
+
+
+    <div class="selection-panel">
+        <h2 class="section-title">Exersizes we offer</h2>
+    
+        <section class="exercises">
+    
+            <div class="exercise">
+                <img src="{{ url_for('static', filename='img/biceps-exercises-dumbbell-home.jpeg') }}" alt="Photo 1">
+                <div class="content">
+                    <h2>Bicesps</h2><br>
+                    <li>skdjf</li>
+                    <li>sbvskd</li>
+                    <p>Tighten your bicep and hold that tension as you raise the dumbbell up to your shoulder, bending at the elbow. Exhale as you curl, pause, then inhale as you straighten back to the starting position. Keep your elbow on your thigh at all times. Perform 3 sets of 12 reps, resting for 60 seconds between each set.</p><br>
+                    <button onclick="redirectToPage()">Lets Try</button>
+                </div>
+                <h4>Biceps</h4>
+            </div>
+    
+            <div class="exercise">
+                <img src="{{ url_for('static', filename='img/download.jpg') }}" alt="Photo 2">
+                <div class="content">
+                    <h2>Bicesps</h2><br>
+                    <li>skdjf</li>
+                    <li>sbvskd</li>
+                    <p>Tighten your bicep and hold that tension as you raise the dumbbell up to your shoulder, bending at the elbow. Exhale as you curl, pause, then inhale as you straighten back to the starting position. Keep your elbow on your thigh at all times. Perform 3 sets of 12 reps, resting for 60 seconds between each set.</p><br>
+                    <button>Lets Try</button>
+                </div>
+                <h4>Triceps</h4>
+            </div>
+    
+            <div class="exercise">
+                <img src="{{ url_for('static', filename='img/images (1).jpg') }}" alt="Photo 3">
+                <div class="content">
+                    <h2>Bicesps</h2><br>
+                    <li>skdjf</li>
+                    <li>sbvskd</li>
+                    <p>Tighten your bicep and hold that tension as you raise the dumbbell up to your shoulder, bending at the elbow. Exhale as you curl, pause, then inhale as you straighten back to the starting position. Keep your elbow on your thigh at all times. Perform 3 sets of 12 reps, resting for 60 seconds between each set.</p><br>
+                    <button>Lets Try</button>
+                </div>
+                <h4>Pull-ups</h4>
+            </div>
+    
+            <div class="exercise">
+                <img src="{{ url_for('static', filename='img/images.jpg') }}" alt="Photo 4">
+                <div class="content">
+                    <h2>Bicesps</h2><br>
+                    <li>skdjf</li>
+                    <li>sbvskd</li>
+                    <p>Tighten your bicep and hold that tension as you raise the dumbbell up to your shoulder, bending at the elbow. Exhale as you curl, pause, then inhale as you straighten back to the starting position. Keep your elbow on your thigh at all times. Perform 3 sets of 12 reps, resting for 60 seconds between each set.</p><br>
+                    <button>Lets Try</button>
+                </div>
+                <h4>Legs</h4>
+            </div>
+        </section>
+    </div>
 
 </body>
 </html>

@@ -9,6 +9,19 @@ body {
     background-color: #0F1020;
 }
 
+.section-title {
+    padding: 5px;
+    margin: 0px 20px 0px;
+    color: #C5EBC3;
+    /* background-color: #FCDC4D; yellow color*/
+    background-color: #A8E0FF;
+    border-radius: 5px;
+    border: #D6DBD2 2px solid;
+    color: #0F1020;
+    text-align: center;
+    text-transform: uppercase;
+}
+
 h1 {
     text-align: center;
     color: #C5EBC3;
@@ -33,9 +46,7 @@ nav ul a {
     columns: #000;
     transition: 0.2s ease-in;
     font-size: 18px;
-    border-style: solid;
-    border-color: transparent;
-    border-width: 1px;
+    border: 1px solid transparent;
     box-sizing: border-box; /*Include border in element's dimensions*/
 }
 
@@ -54,7 +65,7 @@ nav ul a:hover {
 .exercises {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    padding: 30px 20px;
+    padding: 20px 20px;
     grid-column-gap: 30px;
     grid-row-gap: 30px;
 }
@@ -62,15 +73,15 @@ nav ul a:hover {
 
 /* starts from here */
 .exercise {
-    position: relative;
+    position: relative; /*Parent class*/
 }
 
 .exercise img{
+    object-fit: cover;
     width: 100%;
     height: 350px;
     border-radius: 5px;
-    border-style: solid;
-    border-color: #D6DBD2;
+    border: #D6DBD2 2px solid;
     transition: transform 0.5s ease, filter 0.5s ease;
 }
 
@@ -91,8 +102,8 @@ nav ul a:hover {
 }
 
 .content {
-    height: 92%;
-    position: absolute;
+    position: absolute;  /*Child class*/
+    min-height: 92%;
     background: rgba(0,0,0,0.6);
     top: 0;
     padding: 20px;
@@ -110,6 +121,7 @@ nav ul a:hover {
     opacity: 0;
     transition: 0.1s ease;
 }
+
 .exercise:hover >* {
     opacity: 1;
     transition: 0.5s ease;
@@ -117,20 +129,22 @@ nav ul a:hover {
 
 .content button:hover {
     transform: scale(1.08);
-}
+    box-shadow: 0px 0px 10px #A8E0FF; 
+} 
 
 .content button {
     padding: 5px;
     border: none;
     outline: none;
-    background-color: #E75A7C;
-    color: #0f1020;
+    background-color: #A8E0FF;
+    color: #0F1020;
     cursor: pointer;
-    border-radius: 20px;
+    border-radius: 5px;
     border-style: solid;
-    border-color: #0f1020;
+    border-color: #0F1020;
     border-width: 1px;
     font-size: 15px;
+    font-weight: bold;
     margin: 0 auto;
     transition: 0.3s ease;
     text-align: center;
@@ -188,9 +202,21 @@ nav ul a:hover {
     }
 }
 
-@media screen and (max-width: 760px) {
+@media screen and (max-width: 720px) {
     .exercises {
         grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media screen and (max-width: 560px) {
+    .exercises {
+        grid-template-columns: repeat(1, 1fr);
+        padding: 10px 10px;
+    }
+
+    .section-title {
+        padding: 5px;
+        margin: 0px 10px 0px;
     }
 }
 
