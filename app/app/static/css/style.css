@@ -1,4 +1,6 @@
-/*To remove the default styles given by browser to the body, html, etc. Select all elements using '*' and give desired style.*/ * {
+/* css for index.html */
+
+/*To remove the default styles given by browser to the body, html, etc. Select all elements using '*' and give desired style.*/ index-* {
     margin: 0;
     padding: 0;
     font-family: sans-serif;
@@ -220,3 +222,57 @@ nav ul a:hover {
     }
 }
 
+
+
+/* For the biceps.html  */
+
+biceps-* {
+    margin: 0;
+    padding: 0;
+    /* box-sizing: border-box; */
+} 
+
+biceps-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0F1020;
+    height: 100%;
+}
+.video-container {
+    /*To center the div*/
+    display: flex;
+    justify-content: center;   /*Center horizontally*/
+    align-items: center;       /*Center vertically*/
+
+    position: relative;   /*Parent class*/
+    border-radius: 5px;
+    border: 1px solid #D6DBD2;
+    box-sizing: border-box; /*Include border in element's dimensions*/
+    width: 100%; /* Adjust width and height as needed */
+    height: 99.5vh;
+}
+
+.video-container img {
+    width: 100%;
+    height: 100%;
+}
+
+.video {
+    object-fit: cover; /*Avoids the streching of image*/
+}
+
+.child-elements {
+    position: absolute;
+    top: 0;
+    left: 30;
+    padding: 10px;
+    background: rgba(255,255,255,0.6);
+}
+
+@media screen and (max-width: 1000px) {
+    .video-container {
+        width: 100%;
+        height: 99.5vh;
+    }
+}

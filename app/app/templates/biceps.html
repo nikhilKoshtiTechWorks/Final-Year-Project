@@ -1,72 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Video Stream</title>
-    <script src="{{ url_for('static', filename='js/script.js')}}"></script>
-    <style>
+{% extends "templates/jinja_template.html" %}
 
-        * {
-            margin: 0;
-            padding: 0;
-            /* box-sizing: border-box; */
-        }
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .video-container {
-            /*To center the div*/
-            display: flex;
-            justify-content: center;   /*Center horizontally*/
-            align-items: center;       /*Center vertically*/
-
-            position: relative;   /*Parent class*/
-            border-radius: 5px;
-            display: inline-block;
-            border: 1px solid #D6DBD2;
-            box-sizing: border-box; /*Include border in element's dimensions*/
-            width: 80%; /* Adjust width and height as needed */
-            height: 99.5vh;
-        }
-
-        .video-container img {
-            width: 100%;
-            height: 100%;
-        }
-
-        .video {
-            object-fit: cover; /*Avoids the streching of image*/
-        }
-
-        .child-elements {
-            position: absolute;
-            top: 0;
-            left: 30;
-            padding: 10px;
-            background: rgba(255,255,255,0.6);
-        }
-
-        @media screen and (max-width: 1000px) {
-            .video-container {
-                width: 100%;
-                height: 99.5vh;
-            }
-        }
-    </style>
-</head>
-<body style="background-color: #0F1020; height: 100%;">
+{% block title %}Video Stream{% endblock title %}
     
-    <div class="video-container">
-        <img class="video" src="{{ url_for('stream_video') }}" alt="Video Stream">
-        <div class="child-elements">
-            <button onclick="redirectToHomePage()">Back to home</button>
-            <h2>Instructions</h2>
-            <li>Elbow is right</li>
-            <li>Back is wrong</li>
-        </div>
+{% block content %} 
+
+<div class="video-container">
+    <img class="video" src="{{ url_for('stream_video') }}" alt="Video Stream">
+    <div class="child-elements">
+        <button onclick="redirectToHomePage()">Back to home</button>
+        <h2>Instructions</h2>
+        <li>Elbow is right</li>
+        <li>Back is wrong</li>
     </div>
-</body>
-</html>
+</div>
+
+{% endblock content %}
+

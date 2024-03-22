@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='img/Logo.jpeg')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
+    <title>{% block title %} {% endblock title %}</title>
+    <script src="{{ url_for('static', filename='js/script.js')}}"></script>
+</head>
+<body>
+    <h1>FORM PERFECTOR</h1>
+    <nav>
+        <ul>
+            <a href="#"><li>HOME</li></a>
+            <a href="#"><li>ORDER</li></a>
+            <a href="#"><li>NEAR</li></a>
+            <a href="#"><li>ABOUT</li></a>
+        </ul>
+    </nav>
+    <br>
+
+    {% block content %} {% endblock content %}
+
+</body>
+</html>

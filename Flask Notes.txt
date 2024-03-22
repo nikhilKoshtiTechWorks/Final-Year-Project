@@ -1,0 +1,19 @@
+Jinja is a default templating engine that comes with flask.
+
+To use the templates for multiple times, we need to create base template and then create a child templates which inerits base template.
+
+We create base class (like a boiler plate) then create desired blocks:
+
+<html>
+	<head>
+		<title> {% block block_name %} {% endblock block_name %} </title>
+	</head>
+</html>
+
+
+Then you extend the base template in child template and plug in the gaps of blocks
+{% extends path_of_base_template %} // this pulls all of the code of base template
+
+// then we need to plug the gaps of block
+
+{% block block_name %} Title_name {% endblock %}
